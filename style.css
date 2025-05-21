@@ -1,0 +1,273 @@
+/* Reset CSS */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+html,
+body {
+	background: #edeef0;
+	padding: 15px;
+    -webkit-overflow-scrolling: touch;
+}
+img {
+	max-width: 100%;
+	height: auto;
+	vertical-align: middle;
+	display: inline-block;
+}
+
+/* Main CSS */
+.grid-wrapper > div {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+   
+}
+.grid-wrapper > div > img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border-radius: 20px;
+}
+
+.grid-wrapper {
+	display: grid;
+	grid-gap: 30px;
+	grid-template-columns: repeat(4, 1fr);
+	grid-auto-rows: 300px;
+	grid-auto-flow: dense;
+    
+}
+
+.grid-wrapper .wide {
+	grid-column: span 2;
+}
+.grid-wrapper .wide2 {
+	grid-column: span 2;
+}
+.grid-wrapper .tall {
+	grid-row: span 2;
+}
+.grid-wrapper .big {
+	grid-column: span 2;
+	grid-row: span 2;
+}
+
+.grid-wrapper .big-2 {
+	grid-column: span 4;
+	grid-row: span 2;
+}
+
+.grid-wrapper .slim {
+	grid-column: span 4;
+}
+
+/* Media Query for Tablet Devices */
+@media screen and (max-width: 1024px) {
+	.grid-wrapper {
+		grid-template-columns: repeat(2, 1fr);
+	}
+	
+	.grid-wrapper .big-2,
+	.grid-wrapper .slim {
+		grid-column: span 2;
+	}
+}
+
+/* Media Query for Mobile Devices */
+@media screen and (max-width: 768px) {
+
+	.grid-wrapper {
+		grid-template-columns: 1fr; /* Single column layout */
+		grid-gap: 20px; /* Smaller gap for mobile */
+       
+	}
+	
+	/* Reset all spanning to fit in the single column */
+	.grid-wrapper .wide,
+    .grid-wrapper .wide2,
+	.grid-wrapper .big,
+	.grid-wrapper .big-2,
+	.grid-wrapper .slim {
+		grid-column: span 1;
+	}
+	
+	/* Adjust height for tall items for better mobile viewing */
+	.grid-wrapper .tall,
+	.grid-wrapper .big,
+	.grid-wrapper .big-2 {
+		grid-row: span 1;
+	}
+
+    .grid-wrapper .tall {
+        grid-row: span 2;
+    }
+    .grid-wrapper .big{
+        grid-row: span 2;
+    }
+    .grid-wrapper .big-2{
+        grid-row: span 2;
+    }
+	.grid-wrapper .slim {
+		grid-column: span 1;
+	}
+
+	/* Adjust height for better mobile viewing */
+	.grid-wrapper {
+		grid-auto-rows: 250px;
+	}
+
+
+    html, body{
+        padding: 10px;
+    }
+}
+
+
+/* animations */
+/* edit */
+@keyframes fadeInUpInitial {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Initial state for non-animated divs */
+.grid-wrapper .tall,
+.grid-wrapper .box,
+.grid-wrapper .big,
+.grid-wrapper .wide2
+ {
+    opacity: 0;
+}
+
+/* Animation classes for initial load */
+.grid-wrapper .tall.show-initial {
+    animation: fadeInUpInitial 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    animation-delay: 0.2s;
+}
+
+.grid-wrapper .box.show-initial {
+    animation: fadeInUpInitial 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    animation-delay: 1s;
+}
+
+.grid-wrapper .big.show-initial {
+    animation: fadeInUpInitial 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    animation-delay: 0.8s;
+}
+
+.grid-wrapper .wide2.show-initial {
+    animation: fadeInUpInitial 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    animation-delay: 0.6s;
+}
+
+
+/* ------------------------wide-------------------------------- */
+/* -------------------------------------- */
+.content {
+    position: absolute;
+   
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left; /* Aligns text to the left */
+}
+
+.content h2 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    margin: 0 0 10px;
+    font-size: 2rem;
+    color: #333;
+}
+
+.content p {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    margin: 0;
+    font-size: 1rem;
+    color: #555;
+}
+
+.large .content {
+    position: absolute;
+    left: 2rem;
+    
+}
+.big .content{
+    top: 2rem;
+    left: 2rem;
+}
+
+@media (max-width: 768px) {
+    .big .content{
+        left: 0rem;
+        top: 0rem;
+    }
+
+    .large .content {
+        left: 0rem;
+        top: 4rem;
+    }
+ 
+
+
+.content h2 {
+    
+    font-size: 1.5rem;
+}
+
+.content p {
+    
+    font-size: 1rem;
+   
+}
+}
+
+
+
+/* ----------------------------------------------- Social media icon ------------------------------------------------------ */
+.social-icons {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 40px;
+	padding: 40px;
+	text-align: center;
+}
+.social-icons a {
+	font-size: 40px;
+	color: #000;
+	text-decoration: none;
+	transition: transform 0.3s ease, color 0.3s ease;
+}
+.social-icons a:hover {
+	color: #f26722;
+	transform: scale(1.1);
+}
+
+/* -------------------------------------------------footer 2------------------------------------------------------- */
+.social-icons-2 {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 40px;
+	padding: 40px;
+	text-align: center;
+}
+.social-icons-2 a {
+	font-size: 40px;
+	color: #000;
+	text-decoration: none;
+	transition: transform 0.3s ease, color 0.3s ease;
+}
+.social-icons-2 a:hover {
+	color: #f26722;
+	transform: scale(1.1);
+}
