@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Behind the Octopus</title>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f9f9f9;
+      color: #222;
+    }
+
+    .section-2 {
+      max-width: 100%;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 40px;
+      background: #9ca475;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+    }
+
+    .image-wrap {
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+    }
+
+    .image-wrap img {
+      width: 100%;
+      height: auto;
+      display: block;
+      mask-image: linear-gradient(to right, black 65%, transparent 100%);
+      -webkit-mask-image: linear-gradient(to right, black 65%, transparent 100%);
+    }
+
+    .content-2 {
+      display: flex;
+      flex-direction: column;
+      /* justify-content: center; */
+      padding-top: 20px;
+    }
+
+    .content-2 h2 {
+      font-size: 28px;
+      font-weight: 600;
+      margin-bottom: 0px;
+      margin-top: 0px;
+    }
+
+    .content-2 p {
+      font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 10px;
+      color: #444;
+    }
+
+    .skills {
+      margin-top: 0px;
+    }
+
+    .skills h3 {
+      font-size: 16px;
+      font-weight: 600;
+      color: #555;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 16px;
+    }
+
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 12px;
+    }
+
+    .skills-list span {
+      background-color: #f1f1f1;
+      color: #333;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+      .section-2 {
+        grid-template-columns: 1fr;
+        padding: 20px;
+      }
+
+      .image-wrap img {
+        mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+        -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="section-2">
+    <div class="image-wrap">
+      <img src="/images/myphoto-2.jpg" alt="Stefan Poulos" />
+    </div>
+    <div class="content-2">
+      <h2>Behind the Octopus</h2>
+      <p>Stefan Poulos is the founder and lead creative of Poulos Collective, a design consultancy specializing in visual design and UX strategy for digital products and platforms.</p>
+      <p>He holds a background in fine art and design from Ringling College, with experience at Robrady Design, C.S.A. Design, Discovery Channel, and Pappas Group. His work has impacted global brands and audiences in over 170 countries.</p>
+
+      <div class="skills">
+        <h3>Skills</h3>
+        <div class="skills-list">
+          <span>Ansible</span>
+          <span>Terraform</span>
+          <span>Docker</span>
+          <span>Kubernetes</span>
+          <span>Jenkins</span>
+          <span>Git</span>
+          <span>GitHub</span>
+          <span>AWS</span>
+          <span>Python</span>
+          <span>Bash</span>
+          <span>Grafana</span>
+          <span>Prometheus</span>
+          <span>ReactJS</span>
+          <span>JavaScript</span>
+          <span>TailwindCSS</span>
+          <span>HTML</span>
+          <span>CSS</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

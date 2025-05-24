@@ -7,6 +7,7 @@
 html,
 body {
 	background: #edeef0;
+	font-family: 'Inter', sans-serif;
 	padding: 15px;
     -webkit-overflow-scrolling: touch;
 }
@@ -39,6 +40,10 @@ img {
 	grid-auto-flow: dense;
     
 }
+.grid-wrapper .big-2 {
+	grid-column: span 4;
+	grid-row: span 2;
+}
 
 .grid-wrapper .wide {
 	grid-column: span 2;
@@ -54,10 +59,7 @@ img {
 	grid-row: span 2;
 }
 
-.grid-wrapper .big-2 {
-	grid-column: span 4;
-	grid-row: span 2;
-}
+
 
 .grid-wrapper .slim {
 	grid-column: span 4;
@@ -67,6 +69,7 @@ img {
 @media screen and (max-width: 1024px) {
 	.grid-wrapper {
 		grid-template-columns: repeat(2, 1fr);
+		
 	}
 	
 	.grid-wrapper .big-2,
@@ -81,14 +84,17 @@ img {
 	.grid-wrapper {
 		grid-template-columns: 1fr; /* Single column layout */
 		grid-gap: 20px; /* Smaller gap for mobile */
-       
+		grid-auto-rows: 280px;
 	}
 	
 	/* Reset all spanning to fit in the single column */
 	.grid-wrapper .wide,
     .grid-wrapper .wide2,
 	.grid-wrapper .big,
-	.grid-wrapper .big-2,
+	.grid-wrapper .big-2 {
+		grid-column: span 1;
+	}
+
 	.grid-wrapper .slim {
 		grid-column: span 1;
 	}
@@ -107,16 +113,13 @@ img {
         grid-row: span 2;
     }
     .grid-wrapper .big-2{
-        grid-row: span 2;
+        grid-row: span 4;
     }
-	.grid-wrapper .slim {
-		grid-column: span 1;
-	}
-
+	
 	/* Adjust height for better mobile viewing */
-	.grid-wrapper {
+	/* .grid-wrapper {
 		grid-auto-rows: 250px;
-	}
+	} */
 
 
     html, body{
@@ -169,7 +172,7 @@ img {
 }
 
 
-/* ------------------------wide-------------------------------- */
+/* ------------------------content------------------------------- */
 /* -------------------------------------- */
 .content {
     position: absolute;
@@ -222,7 +225,7 @@ img {
 
 .content h2 {
     
-    font-size: 1.5rem;
+    font-size: 1.8rem;
 }
 
 .content p {
@@ -249,11 +252,12 @@ img {
 	transition: transform 0.3s ease, color 0.3s ease;
 }
 .social-icons a:hover {
-	color: #f26722;
+	color: #7c0a02;
 	transform: scale(1.1);
 }
 
-/* -------------------------------------------------footer 2------------------------------------------------------- */
+
+/* --------------------------------------------------------------footer 2------------------------------------------------------- */
 .social-icons-2 {
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
@@ -268,6 +272,92 @@ img {
 	transition: transform 0.3s ease, color 0.3s ease;
 }
 .social-icons-2 a:hover {
-	color: #f26722;
+	color: #7c0a02;
 	transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+	.social-icons-2 {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 30px;
+		padding: 40px;
+		text-align: center;
+		
+		
+	}
+}
+
+
+
+
+/* ========================================== Testimonials ============================================== */
+.testimonials {
+	width: 90%;
+	max-width: 700px;
+	text-align: center;
+	overflow: hidden;
+}
+.testimonials h2 {
+	font-family: 'Poppins', sans-serif;
+	font-weight: 700;
+	margin: 0 0 10px;
+	font-size: 2rem;
+	color: #333;
+}
+.testimonial-text {
+	font-family: 'Poppins', sans-serif;
+	font-weight: 500;
+	margin: 0;
+	font-size: 1rem;
+	color: #555;
+	line-height: 1.5;
+	margin-bottom: 15px;
+	transition: opacity 0.5s ease, transform 0.5s ease;
+	opacity: 0;
+	transform: translateY(20px);
+}
+.testimonial-text.active {
+	opacity: 1;
+	transform: translateY(0);
+}
+.testimonial-author {
+	font-style: italic;
+	color: #888;
+	transition: opacity 0.5s ease, transform 0.5s ease;
+	opacity: 0;
+	transform: translateY(20px);
+}
+.testimonial-author.active {
+	opacity: 1;
+	transform: translateY(0);
+}
+.arrows {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 20px;
+}
+.arrow {
+	font-size: 35px;
+	color: #7c0a02;
+	cursor: pointer;
+	user-select: none;
+}
+.arrow:hover {
+	color: #d8551a;
+}
+
+@media (max-width: 480px) {
+	.testimonials {
+		padding: 15px;
+	}
+	.testimonial-text {
+		font-size: 1rem;
+	}
+	.testimonial-author {
+		font-size: 12px;
+	}
+	.arrows .arrow {
+		font-size: 25px;
+	}
 }
