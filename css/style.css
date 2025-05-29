@@ -176,8 +176,8 @@ img {
 /* -------------------------------------- */
 .content {
     position: absolute;
-   
-    padding: 40px;
+	padding: 35px;
+    /* padding: 40px; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -197,6 +197,7 @@ img {
     font-weight: 500;
     margin: 0;
     font-size: 1rem;
+	line-height: 1.6;
     color: #555;
 }
 
@@ -258,6 +259,18 @@ img {
 
 
 /* --------------------------------------------------------------footer 2------------------------------------------------------- */
+.social-section {
+	text-align: center;
+
+}
+
+.social-heading {
+	font-size: 24px;
+	/* margin-bottom: 20px; */
+	color: #000;
+}
+
+
 .social-icons-2 {
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
@@ -279,9 +292,10 @@ img {
 @media (max-width: 768px) {
 	.social-icons-2 {
 		display: grid;
-		grid-template-columns: repeat(2, 1fr);
+		grid-template-columns: repeat(4, 1fr);
 		gap: 30px;
-		padding: 40px;
+		padding-top: 40px;
+		padding-bottom: 0px;
 		text-align: center;
 		
 		
@@ -291,8 +305,9 @@ img {
 
 
 
+
 /* ========================================== Testimonials ============================================== */
-.testimonials {
+/* .testimonials {
 	width: 90%;
 	max-width: 700px;
 	text-align: center;
@@ -360,4 +375,4 @@ img {
 	.arrows .arrow {
 		font-size: 25px;
 	}
-}
+} */

@@ -7,29 +7,57 @@
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/skill.css">
     <link rel="stylesheet" href="./css/hero.css">
+    <link rel="stylesheet" href="./css/card-devops.css">
+    <link rel="stylesheet" href="./css/Testimonials.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+   
+
+
+
     <title>Devops</title>
 </head>
+<style>
+
+    
+@font-face {
+  font-family: 'South Gardens';
+  src: url('/BellaDonnaPersonalUseRegular-W8zv.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.social-heading {
+  font-family: 'South Gardens', cursive;
+  font-size: 1.6rem;
+  color: #333;
+  letter-spacing: 0.5px;
+}
+
+  </style>
 <body>
     <div class="grid-wrapper">
         <div class="tall" style="background-color: #7c0a02; border-radius: 20px;">
             <img src="./images/octo.png" alt="">
             <div class="content" style="position: absolute; top: 0rem;" >
-                <h2 style="color: #edeef0;">Heading is a parage</h2> 
-             <!-- <p style="color: aliceblue;">Heading is a paragraph</p> -->
+                <h2 style="color: #edeef0;">Dev X Ops</h2> 
+             <p style="color: aliceblue;">Delivering Scalable Systems from Terminal to Screen  </p>
+             <!-- <p style="color: aliceblue; text-align:end; bottom: 1px;">Ashish Sharma</p> -->
             </div>
         </div>
-        <div class="wide2" style="background-color: antiquewhite; border-radius: 20px;">
+        <div class="wide2" style="border-radius: 20px;  background-image: url(/images/pipline-3.jpg);">
             <div class="content" style="position: absolute; bottom: 0rem;" >
-                <h2>New perspectives as an
-                    independent creative</h2>
-                <p><i class="fa-solid fa-arrow-up-right-from-square"></i></p>
+                <h2>Code with clarity. Deploy with confidence.</h2>
+                <p>
+                    <a href="https://github.com/ashishnxt" target="_blank">
+                      <i class="fa-solid fa-arrow-up-right-from-square" style="color: #fff;"></i>
+                    </a>
+                  </p>
             </div>
         </div>
         <div class="box" style="background-color: #ffffff; border-radius: 20px;">
             <div class="content" >
                 <h2>Hello 👋</h2>
-                <p>This is a paragraph on the left side of the box. The layout is responsive, and the content adjusts for different screen sizes.</p>
+             <p>I’m Ashish — a DevOps-driven developer who designs, deploys, and delivers scalable systems from the UI to EC2.</p>
             </div>
         </div>
         <div class="box" style="background-color: #ffffff; border-radius: 20px;">
@@ -45,14 +73,28 @@
                 <div class="slider-container" data-slider="1">
                   <div class="slider-track">
                     <div class="slide">
-                      <img src="https://picsum.photos/id/1015/800/400" alt="Slide 1">
+                      <img src="/images/ai-brain.png" alt="Slide 1" style="background-color: #40c2a6;">
                       <div class="slide-overlay">
-                        <h2>First Slider</h2>
-                        <p>Subline description here.</p>
+                        <h2>AI-Powered DevOps Evolution</h2>
+                        <p>From smart agents to workflow orchestrators like MCP and N8N — harness the power of automation to accelerate deployment, optimize pipelines, and streamline operations.</p>
                       </div>
                     </div>
-                    <img class="slide" src="https://picsum.photos/id/1016/800/400" alt="Slide 2">
-                    <img class="slide" src="https://picsum.photos/id/1018/800/400" alt="Slide 3">
+                    <div class="slide">
+                        <img src="/images/lama-2-removebg-preview.png" alt="Slide 2" style="background-color: #40c2a6; padding-top: 30%;">
+                        <div class="slide-overlay">
+                          <h2>LLM-Driven DevOps with OLMo</h2>
+                          <p>From intelligent coding to automated insights with OLMo — harness LLM power to accelerate delivery, enhance pipelines, and streamline DevOps <br> workflows.</p>
+                        </div>
+                      </div>
+                    <!-- <img class="slide" src="/images/cici-2-removebg-preview.png" alt="Slide 2"  style="background-color: #40c2a6;"> -->
+                    <div class="slide">
+                        <img src="/images/embed-automation.webp" alt="Slide 3" style="background-color: #40c2a6; padding-top: 55%;">
+                        <div class="slide-overlay">
+                          <h2>Workflow Automation with n8n</h2>
+                          <p>From no-code automation to seamless integrations with n8n — harness the power of workflows to accelerate deployment, optimize pipelines, and streamline operations.</p>
+                        </div>
+                      </div>
+
                   </div>
                   <button class="slider-button prev">&#10094;</button>
                   <button class="slider-button next">&#10095;</button>
@@ -61,31 +103,58 @@
               </div>
  
         </div>
-        <div class="wide2" style="background-color: antiquewhite; border-radius: 20px;">
-            <div class="testimonials">
-                <h2>Testimonials </h2> 
-                <div class="testimonial-text active" id="testimonialText">
-                    Stefan has consistently helped us to move the needle ovotion expertise. Any team should conside
+        <div class="wide2" style="background-color: #ffffff; border-radius: 20px;">
+            <div class="testimonials-container">
+                <div class="testimonials-header">
+                    <h2 class="testimonials-title">Testimonials</h2>
+                    <div class="navigation-arrows">
+                        <button class="nav-arrow prev" onclick="previousTestimonial()" aria-label="Previous testimonial"></button>
+                        <button class="nav-arrow next" onclick="nextTestimonial()" aria-label="Next testimonial"></button>
+                    </div>
                 </div>
-                <div class="testimonial-author active" id="testimonialAuthor">
-                    Lacey Gerard
-                </div>
-                <div class="arrows">
-                    <span class="arrow" onclick="prevTestimonial()">&#10094;</span>
-                    <span class="arrow" onclick="nextTestimonial()">&#10095;</span>
+        
+                <div class="testimonials-content">
+                    <div class="testimonials-slider">
+                        <div class="testimonial-slide active">
+                            <p class="testimonial-text">
+                                "ASM Group has played a crucial role in establishing our online presence. Over time, their expertise in website creation and deployment has ensured a seamless transition to a strong digital identity"
+                            </p>
+                            <p class="testimonial-author">
+                                Lacey Gerard, Experience Design Manager
+                            </p>
+                        </div>
+        
+                        <div class="testimonial-slide">
+                            <p class="testimonial-text">
+                                Working with Stefan was transformative for our product development process. His attention to detail and innovative approach to user experience design elevated our entire platform. The results speak for themselves.
+                            </p>
+                            <p class="testimonial-author">
+                                Michael Chen, Product Director at TechFlow
+                            </p>
+                        </div>
+        
+                        <div class="testimonial-slide">
+                            <p class="testimonial-text">
+                                Stefan's expertise in both design and development is rare to find. He bridged the gap between our design and engineering teams seamlessly, delivering solutions that were both beautiful and technically sound.
+                            </p>
+                            <p class="testimonial-author">
+                                Sarah Williams, CTO at InnovateLab
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="big-2" style="background-color: #9ca475; border-radius: 20px;">
+        <div class="big-2" style="background-color: #BFAE9A; border-radius: 20px;">
          
             <div class="section-2">
                 <div class="image-wrap">
                   <img src="/images/myphoto-2.jpg" alt="Stefan Poulos" />
                 </div>
                 <div class="content-2">
-                  <h2>Behind the Octopus</h2>
-                  <p>Stefan Poulos is the founder and lead creative of Poulos Collective, a design consultancy specializing in visual design and UX strategy for digital products and platforms.</p>
-                  <p>He holds a background in fine art and design from Ringling College, with experience at Robrady Design, C.S.A. Design, Discovery Channel, and Pappas Group. His work has impacted global brands and audiences in over 170 countries.</p>
+                  <h2>Code, Cloud & Creativity</h2>
+                  <p>I’m Ashish Sharma — a DevOps-driven developer passionate about building seamless digital experiences. With a unique blend of backend automation and frontend design, I bring ideas to life through scalable systems and clean interfaces.</p>
+                  <p>From CI/CD pipelines using Jenkins and Docker to responsive UIs crafted in React and TailwindCSS, I merge DevOps precision with developer creativity — delivering solutions that are fast, secure, and beautifully built.</p>
             
                   <div class="skills">
                     <h3>Skills</h3>
@@ -114,8 +183,6 @@
                       <span>Grafana</span>
                       <span>Prometheus</span>
                       <span>ReactJS</span>
-                      <span>JavaScript</span>
-                      <span>TailwindCSS</span>
                     </div>
                   </div>
                 </div>
@@ -125,8 +192,159 @@
 
 
 
-        <div class="wide">
-            <img src="https://images.unsplash.com/photo-1588499756884-d72584d84df5?ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=2134&amp;q=80" alt="" />
+        <div class="wide" style="background-color: rgb(255, 255, 255); border-radius: 20px; ">
+            <!-- <img src="https://images.unsplash.com/photo-1588414734732-660b07304ddb?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=675&amp;q=80" alt="" /> -->
+            <div class="slider">
+                <div class="card">
+                  <div class="products">
+
+
+                    <div class="product">
+                        <div class="thumbnail">
+                          <img src="./images/Red_Hat-Logo.wine.svg" alt="redhat">
+                        </div>
+                      </div>
+
+                      <div class="product">
+                        <div class="thumbnail">
+                          <img src="./images/ubuntu.png" alt="ubuntu">
+                        </div>
+                      </div>
+
+                      
+
+                    <!-- Slide 1: Ansible -->
+                    <div class="product">
+                      <div class="thumbnail">
+                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/ansible/ansible-original.svg" alt="Ansible">
+                      </div>
+                    </div>
+              
+                    <!-- Slide 2: Terraform -->
+                    <div class="product">
+                      <div class="thumbnail">
+                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/terraform/terraform-original.svg" alt="Terraform">
+                      </div>
+                    </div>
+              
+                    <!-- Slide 3: Docker -->
+                    <div class="product">
+                      <div class="thumbnail">
+                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original.svg" alt="Docker">
+                      </div>
+                    </div>
+              
+                    <!-- Slide 4: Kubernetes -->
+                    <div class="product">
+                      <div class="thumbnail">
+                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/kubernetes/kubernetes-plain.svg" alt="Kubernetes">
+                      </div>
+                    </div>
+              
+                    <!-- Slide 5: Jenkins -->
+                    <div class="product">
+                      <div class="thumbnail">
+                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/jenkins/jenkins-original.svg" alt="Jenkins">
+                      </div>
+                    </div>
+              
+                    <!-- Slide 6: Git -->
+                    <div class="product">
+                      <div class="thumbnail">
+                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg" alt="Git">
+                      </div>
+                    </div>
+              
+                    <!-- Slide 7: GitHub -->
+                    <div class="product">
+                      <div class="thumbnail">
+                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/github/github-original.svg" alt="GitHub">
+                      </div>
+                    </div>
+              
+                    <!-- Slide 8: AWS -->
+                    <div class="product">
+                      <div class="thumbnail">
+                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS">
+                      </div>
+                    </div>
+              
+                    <!-- Slide 9: Python -->
+                    <div class="product">
+                      <div class="thumbnail">
+                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="Python">
+                      </div>
+                    </div>
+              
+                    <!-- Slide 10: Bash -->
+                    <div class="product">
+                      <div class="thumbnail">
+                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/bash/bash-original.svg" alt="Bash">
+                      </div>
+                    </div>
+              
+                    <!-- Slide 11: Grafana -->
+                    <div class="product">
+                      <div class="thumbnail">
+                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/grafana/grafana-original.svg" alt="Grafana">
+                      </div>
+                    </div>
+              
+                    <!-- Slide 12: Prometheus -->
+                    <div class="product">
+                      <div class="thumbnail">
+                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/prometheus/prometheus-original.svg" alt="Prometheus">
+                      </div>
+                    </div>
+              
+                    <!-- Slide 13: Nginx -->
+                    <div class="product">
+                      <div class="thumbnail">
+                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nginx/nginx-original.svg" alt="Nginx">
+                      </div>
+                    </div>
+              
+                    <!-- Slide 14: Apache -->
+                    <div class="product">
+                      <div class="thumbnail">
+                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/apache/apache-original.svg" alt="Apache">
+                      </div>
+                    </div>
+              
+                    <!-- Slide 15: PostgreSQL -->
+                    <div class="product">
+                      <div class="thumbnail">
+                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original.svg" alt="PostgreSQL">
+                      </div>
+                    </div>
+              
+                    <!-- Slide 16: SonarQube (using generic icon as specific one may not be available) -->
+                    <div class="product">
+                      <div class="thumbnail">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sonarqube/sonarqube-original.svg" alt="SonarQube">
+                      </div>
+                    </div>
+
+                    <div class="product">
+                        <div class="thumbnail">
+                          <img src="./images/Netdata.png" alt="SonarQube">
+                        </div>
+                      </div>
+
+                      <div class="product">
+                        <div class="thumbnail">
+                          <img src="./images/trivy.webp" alt="SonarQube">
+                        </div>
+                      </div>  
+                  </div>
+              
+                  <div class="footer">
+                    <button class="btn prev" ripple ripple-color="#999999">Prev</button>
+                    <button class="btn next" ripple ripple-color="#999999">Next</button>
+                  </div>
+                </div>
+              </div>
+              
         </div>
        
         <div class="big">
@@ -156,7 +374,7 @@
                     <div class="slide">
                       <img src="https://picsum.photos/id/1015/800/400" alt="Slide 1">
                       <div class="slide-overlay">
-                        <h2>First Slider</h2>
+                        <h2>First </h2>
                         <p>Subline description here.</p>
                       </div>
                     </div>
@@ -170,20 +388,86 @@
               </div>
         </div>
    
-        <div class="wide">
-            <img src="https://images.unsplash.com/photo-1588414734732-660b07304ddb?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=675&amp;q=80" alt="" />
+        <div class="wide" style="background-color: rgb(255, 255, 255); border-radius: 20px;">
+            <!-- First Slider -->
+            <div class="slider">
+                <div class="card">
+                  <div class="products">
+                    <!-- Slide 1: ReactJS -->
+                    <div class="product">
+                      <div class="thumbnail">
+                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg" alt="ReactJS">
+                      </div>
+                    </div>
+              
+                    <!-- Slide 2: TailwindCSS -->
+                    <div class="product">
+                      <div class="thumbnail">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" alt="TailwindCSS">
+                      </div>
+                    </div>
+              
+                    <!-- Slide 3: HTML -->
+                    <div class="product">
+                      <div class="thumbnail">
+                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg" alt="HTML">
+                      </div>
+                    </div>
+              
+                    <!-- Slide 4: CSS -->
+                    <div class="product">
+                      <div class="thumbnail">
+                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg" alt="CSS">
+                      </div>
+                    </div>
+              
+                    <!-- Slide 5: Wix -->
+                    <div class="product">
+                      <div class="thumbnail">
+                        <img src="./images/wix.png" alt="Wix">
+                      </div>
+                    </div>
+              
+                    <!-- Slide 6: WordPress -->
+                    <div class="product">
+                      <div class="thumbnail">
+                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/wordpress/wordpress-original.svg" alt="WordPress">
+                      </div>
+                    </div>
+              
+                    <!-- Slide 7: Bootstrap -->
+                    <div class="product">
+                      <div class="thumbnail">
+                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap">
+                      </div>
+                    </div>
+                  </div>
+              
+                  <div class="footer">
+                    <button class="btn prev" ripple ripple-color="#999999">Prev</button>
+                    <button class="btn next" ripple ripple-color="#999999">Next</button>
+                  </div>
+                </div>
+              </div>
+  
         </div>
         <div class="slim" style="background-color: #ffffff; border-radius: 20px;">
-            <div class="social-icons-2">
-                <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
-                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                
+            <div class="social-section">
+                <p class="social-heading ">Handcrafted by ME. </p>
+
+
+                <div class="social-icons-2">
+                    <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
             </div>
-        </div>
+            
       
     </div>
 </body>
 <script src="./js/script.js"></script>
+<script src="./js/card-devops.js"></script>
+<script src="./js/Testimonials.js"></script>
 </html>

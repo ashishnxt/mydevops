@@ -1,169 +1,385 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Behind the Octopus</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimonials Section</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f8f8f8;
-      padding: 20px;
-    }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: #f8f9fa;
+            padding: 40px 20px;
+        }
 
-    .container {
-      display: flex;
-      flex-direction: row;
-      gap: 40px;
-      background-color: #9ca475;
-      border-radius: 12px;
-      padding: 24px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      max-width: 1200px;
-      margin: 0 auto;
-      flex-wrap: wrap;
-    }
+        .testimonials-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            padding: 60px 80px;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+            position: relative;
+        }
 
-    .image-hero-section {
-      flex: 1 1 300px;
-      text-align: center;
-      position: relative;
-    }
+        .testimonials-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 60px;
+        }
 
-    .image-hero-section img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 12px;
-      display: block;
-      mask-image: linear-gradient(to right, black 60%, transparent 100%);
-      -webkit-mask-image: linear-gradient(to right, black 60%, transparent 100%);
-    }
+        .testimonials-title {
+            font-size: 48px;
+            font-weight: 700;
+            color: #1a1a1a;
+            letter-spacing: -0.02em;
+        }
 
-    .text-hero-section {
-      flex: 2 1 500px;
-      position: relative;
-      z-index: 2;
-    }
+        .navigation-arrows {
+            display: flex;
+            gap: 16px;
+        }
 
-    .text-hero-section h2 {
-      font-size: 28px;
-      margin-bottom: 16px;
-      color: #111;
-    }
+        .nav-arrow {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            border: 2px solid #ff6b35;
+            background: white;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            position: relative;
+        }
 
-    .text-hero-section p {
-      font-size: 16px;
-      line-height: 1.6;
-      color: #333;
-      margin-bottom: 16px;
-    }
+        .nav-arrow:hover {
+            background: #ff6b35;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+        }
 
-    .skills-hero-section {
-      margin-top: 30px;
-    }
+        .nav-arrow:hover::before {
+            border-color: white;
+        }
 
-    .skills-hero-section h3 {
-      font-size: 20px;
-      color: #0056b3;
-      margin-bottom: 10px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
+        .nav-arrow.disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+        }
 
-    .skills-group {
-      margin-bottom: 12px;
-    }
+        .nav-arrow.disabled:hover {
+            background: white;
+            transform: none;
+            box-shadow: none;
+        }
 
-    .skills-group strong {
-      display: block;
-      margin-bottom: 4px;
-      color: #111;
-    }
+        .nav-arrow::before {
+            content: '';
+            width: 12px;
+            height: 12px;
+            border: 2px solid #ff6b35;
+            border-bottom: none;
+            border-right: none;
+            transition: border-color 0.3s ease;
+        }
 
-    .skills-group span {
-      display: inline-block;
-      background-color: #f0f0f0;
-      color: #333;
-      padding: 4px 10px;
-      border-radius: 6px;
-      margin: 4px 6px 4px 0;
-      font-size: 14px;
-    }
+        .nav-arrow.prev::before {
+            transform: rotate(-45deg);
+            margin-left: 4px;
+        }
 
-    @media (max-width: 768px) {
-      .container {
-        flex-direction: column;
-        padding: 16px;
-      }
+        .nav-arrow.next::before {
+            transform: rotate(135deg);
+            margin-right: 4px;
+        }
 
-      .text-hero-section h2 {
-        font-size: 24px;
-      }
+        .testimonials-content {
+            position: relative;
+            overflow: hidden;
+        }
 
-      .text-hero-section p {
-        font-size: 15px;
-      }
+        .testimonials-slider {
+            position: relative;
+            width: 100%;
+            height: auto;
+        }
 
-      .image-hero-section img {
-        mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
-        -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
-      }
-    }
-  </style>
+        .testimonial-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+
+        .testimonial-slide.active {
+            opacity: 1;
+            visibility: visible;
+            position: relative;
+        }
+
+        .testimonial-text {
+            font-size: 28px;
+            line-height: 1.6;
+            color: #2c2c2c;
+            margin-bottom: 40px;
+            font-weight: 400;
+            letter-spacing: -0.01em;
+        }
+
+        .testimonial-author {
+            font-size: 18px;
+            color: #666;
+            font-style: italic;
+            font-weight: 400;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .testimonials-container {
+                padding: 40px 30px;
+                margin: 20px;
+            }
+
+            .testimonials-title {
+                font-size: 36px;
+            }
+
+            .testimonials-header {
+                margin-bottom: 40px;
+            }
+
+            .nav-arrow {
+                width: 40px;
+                height: 40px;
+            }
+
+            .nav-arrow::before {
+                width: 10px;
+                height: 10px;
+            }
+
+            .testimonial-text {
+                font-size: 22px;
+                margin-bottom: 30px;
+            }
+
+            .testimonial-author {
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 20px 10px;
+            }
+
+            .testimonials-container {
+                padding: 30px 20px;
+                margin: 10px;
+            }
+
+            .testimonials-title {
+                font-size: 28px;
+                flex: 1;
+            }
+
+            .testimonials-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 30px;
+                gap: 15px;
+            }
+
+            .navigation-arrows {
+                flex-shrink: 0;
+                gap: 12px;
+            }
+
+            .testimonial-text {
+                font-size: 18px;
+                line-height: 1.5;
+            }
+
+            .testimonial-author {
+                font-size: 14px;
+            }
+        }
+
+        /* Animation for slide transitions */
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .testimonial-slide.entering {
+            animation: slideIn 0.5s ease forwards;
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <div class="image-hero-section">
-      <img src="./images/myphoto-2.jpg" alt="Stefan Poulos" />
+    <div class="testimonials-container">
+        <div class="testimonials-header">
+            <h2 class="testimonials-title">Testimonials</h2>
+            <div class="navigation-arrows">
+                <button class="nav-arrow prev" onclick="previousTestimonial()" aria-label="Previous testimonial"></button>
+                <button class="nav-arrow next" onclick="nextTestimonial()" aria-label="Next testimonial"></button>
+            </div>
+        </div>
+
+        <div class="testimonials-content">
+            <div class="testimonials-slider">
+                <div class="testimonial-slide active">
+                    <p class="testimonial-text">
+                        Stefan has consistently helped us to move the needle over the past 2 years at Ellucian: his design skills and strategy experience helped to mature our design system and his Webflow wizardry brought us motion expertise. Any team should consider themselves lucky to work with Stefan!
+                    </p>
+                    <p class="testimonial-author">
+                        Lacey Gerard, Experience Design Manager at Ellucian
+                    </p>
+                </div>
+
+                <div class="testimonial-slide">
+                    <p class="testimonial-text">
+                        Working with Stefan was transformative for our product development process. His attention to detail and innovative approach to user experience design elevated our entire platform. The results speak for themselves.
+                    </p>
+                    <p class="testimonial-author">
+                        Michael Chen, Product Director at TechFlow
+                    </p>
+                </div>
+
+                <div class="testimonial-slide">
+                    <p class="testimonial-text">
+                        Stefan's expertise in both design and development is rare to find. He bridged the gap between our design and engineering teams seamlessly, delivering solutions that were both beautiful and technically sound.
+                    </p>
+                    <p class="testimonial-author">
+                        Sarah Williams, CTO at InnovateLab
+                    </p>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="text-hero-section">
-      <h2>Behind the Octopus</h2>
-      <p>Stefan Poulos is the founder and lead creative of Poulos Collective, a design consultancy that specializes in visual design and UX strategy for design systems, digital products, mobile applications and desktop platforms.</p>
-      <!-- <p>Stefan has an unusual multi-disciplinary background that he brings to the work today. A native Floridian, he attended Ringling College of Art & Design where he studied fine art, illustration, sculpture and design communication. He has worked at Robrady Design, C.S.A. Design, Discovery Channel, and Pappas Group, delivering global creative campaigns across platforms.</p> -->
 
-      <div class="skills-hero-section">
-        <h3>Skills</h3>
-        
-        <div class="skills-group">
-          <strong>Infrastructure & DevOps</strong>
-          <span>Ansible</span>
-          <span>Terraform</span>
-          <span>Docker</span>
-          <span>Kubernetes</span>
-          <span>Jenkins</span>
-        </div>
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.testimonial-slide');
+        const totalSlides = slides.length;
 
-        <div class="skills-group">
-          <strong>Version Control & Scripting</strong>
-          <span>Git</span>
-          <span>GitHub</span>
-          <span>Python</span>
-          <span>Bash</span>
-        </div>
+        function updateSlide() {
+            slides.forEach((slide, index) => {
+                slide.classList.remove('active', 'entering');
+                if (index === currentSlide) {
+                    slide.classList.add('active');
+                    // Add entering class after a small delay for animation
+                    setTimeout(() => {
+                        slide.classList.add('entering');
+                    }, 10);
+                }
+            });
 
-        <div class="skills-group">
-          <strong>Cloud & Monitoring</strong>
-          <span>AWS (EC2, S3, IAM)</span>
-          <span>Grafana</span>
-          <span>Prometheus</span>
-        </div>
+            // Update navigation arrows
+            const prevBtn = document.querySelector('.nav-arrow.prev');
+            const nextBtn = document.querySelector('.nav-arrow.next');
+            
+            prevBtn.classList.toggle('disabled', currentSlide === 0);
+            nextBtn.classList.toggle('disabled', currentSlide === totalSlides - 1);
+        }
 
-        <div class="skills-group">
-          <strong>Frontend Development</strong>
-          <span>ReactJS</span>
-          <span>JavaScript</span>
-          <span>TailwindCSS</span>
-          <span>HTML</span>
-          <span>CSS</span>
-        </div>
-      </div>
-    </div>
-  </div>
+        function nextTestimonial() {
+            if (currentSlide < totalSlides - 1) {
+                currentSlide++;
+                updateSlide();
+            }
+        }
+
+        function previousTestimonial() {
+            if (currentSlide > 0) {
+                currentSlide--;
+                updateSlide();
+            }
+        }
+
+        // Initialize
+        updateSlide();
+
+        // Auto-slide functionality (optional)
+        let autoSlideInterval;
+
+        function startAutoSlide() {
+            autoSlideInterval = setInterval(() => {
+                if (currentSlide < totalSlides - 1) {
+                    nextTestimonial();
+                } else {
+                    currentSlide = 0;
+                    updateSlide();
+                }
+            }, 5000);
+        }
+
+        function stopAutoSlide() {
+            clearInterval(autoSlideInterval);
+        }
+
+        // Pause auto-slide on hover
+        const container = document.querySelector('.testimonials-container');
+        container.addEventListener('mouseenter', stopAutoSlide);
+        container.addEventListener('mouseleave', startAutoSlide);
+
+        // Start auto-slide
+        startAutoSlide();
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') {
+                previousTestimonial();
+            } else if (e.key === 'ArrowRight') {
+                nextTestimonial();
+            }
+        });
+
+        // Touch/swipe support for mobile
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        container.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+
+        container.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        });
+
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            const diff = touchStartX - touchEndX;
+
+            if (Math.abs(diff) > swipeThreshold) {
+                if (diff > 0) {
+                    // Swiped left - next slide
+                    nextTestimonial();
+                } else {
+                    // Swiped right - previous slide
+                    previousTestimonial();
+                }
+            }
+        }
+    </script>
 </body>
 </html>

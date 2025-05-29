@@ -83,8 +83,8 @@
 }
 
 .big .slide-overlay{
-  top: 2rem;
-  left: 2rem;
+  top: 1rem;
+  left: 1rem;
 }
 
 /* Click zones for navigation - Large screens only */
@@ -138,8 +138,8 @@
 
 @media (max-width: 768px) {
   .slide-overlay{
-    left: 20px;
-    top: 20px;
+    left: 10px;
+    top: 10px;
   }
   
   .large .slide-overlay {
@@ -148,7 +148,7 @@
   }
   
   .slide-overlay h2 {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
   }
   
   .slide-overlay p {
