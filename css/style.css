@@ -144,7 +144,7 @@ img {
 /* 14-inch laptop specific styling */
 @media screen and (min-width: 1500px) and (max-width: 2000px) {
     .grid-wrapper {
-        grid-auto-rows: 400px;
+        grid-auto-rows: 350px;
     }
 }
 
